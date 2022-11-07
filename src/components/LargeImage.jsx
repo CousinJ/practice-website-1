@@ -1,8 +1,8 @@
 import React from 'react'
 
-function LargeImage() {
-    return(<div className='large-image-container'>
-
+function LargeImage(props) {
+    return(<div style={{backgroundImage: `url(${props.imageUrl})`}} className='large-image-container'>
+        
 
     </div>)
 }

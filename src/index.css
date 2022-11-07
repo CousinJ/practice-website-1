@@ -1,15 +1,20 @@
 :root {
-  --bg: rgb(181, 174, 174);
-  --standard-margins: 2px;
+  --bg: rgb(195, 195, 195);
+  --accent-color-one:  rgb(215, 212, 230);
+  --accent-color-two: rgb(84, 87, 160);
+  --standard-margins: 1.5px;
   --size-1: 20px;
   --size-2: 40px;
   --speed: 400ms;
   --translate-distance: 100px;
+  --drop-down-z: 3;
+  --ui-z: 1;
+  --border-rad: 50px;
   
 }
 
 body {
-  background-color: rgb(2, 1, 19);
+  background-color: rgb(50, 50, 50);
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -47,7 +52,7 @@ transition: all  50ms ease;
   margin: auto;
   align-items: center;
   transform: scale(1.03);
-  color: rgb(45, 44, 44)
+ 
   
   
   }
@@ -57,7 +62,7 @@ transition: all  50ms ease;
   height:auto;
   margin: var(--standard-margins);
   background-color: var(--bg);
-  filter: brightness(1.4);
+  filter: brightness(.9);
  
  display:flex;
 opacity: 0;
@@ -65,6 +70,8 @@ opacity: 0;
   flex-wrap: wrap;
 
   flex-direction: column;
+  position: absolute;
+  z-index: var(--drop-down-z);
   
 }
 
@@ -97,7 +104,7 @@ opacity: 0;
   user-select: none;
   
   transform: translateX(10px) scale(1.15) ;
-  background: linear-gradient(to right, rgb(180, 174, 55), rgb(151, 184, 34))
+  background: linear-gradient( to right, var(--accent-color-one),  var(--accent-color-two))
 
 }
 h4 {
@@ -105,12 +112,163 @@ h4 {
 }
 
 
-
+/* image and button changes ================================================================================= */
 
 .large-image-container {
   
   width: 50%;
   height: 500px;
-  background-color: white;
+  background-color: var(--bg);
+
+  z-index: var(--ui-z);
+  display: flex;
+margin: auto;
+  background-repeat:no-repeat ;
+
+background-size: cover;
+margin: var(--standard-margins)
+ 
+}
+
+.large-button-container {
+  width: 250px;
+  height: 50px;
+  border-radius: var(--border-rad) ;
+  background-color: var(--bg);
   margin: var(--standard-margins);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1.5px black;
+  transition: all 300ms ease;
+  /* position: absolute;
+ z-index: var(--ui-z);
+  top: 20%; */
+
+ 
+}
+
+.large-button-div {
+  width: 240px;
+  height: 40px;
+  border-radius: var(--border-rad) ;
+  background-color: var(--bg);
+
+  
+  margin: var(--standard-margins);
+  border-style: solid ;
+  padding: -5px;
+  
+}
+
+.large-button-div:hover {
+  width: 240px;
+  height: 40px;
+  border-radius: var(--border-rad) ;
+  background-color: var(--accent-color-two);
+  filter: brightness(1.1);
+  
+  margin: var(--standard-margins);
+  border-style: solid ;
+  padding: -5px;
+  
+}
+
+.large-button-container:hover {
+  width: 250px;
+  height: 50px;
+  border-radius: var(--border-rad) ;
+  background-color: var(--accent-color-one);
+  margin: var(--standard-margins);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(1.2);
+
+ 
+}
+
+.small-image-container {
+  width: 25%;
+  height: 210px;
+  background-color: var(--bg);
+  margin: var(--standard-margins);
+}
+
+
+.small-button-container {
+  width: var(--size-2);
+  height: calc(var(--size-1) * 1.22);
+  border-radius: var(--border-rad) ;
+  background-color: var(--bg);
+  margin: var(--standard-margins);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease;
+
+ 
+}
+
+.small-button-div {
+  width: calc(var(--size-2) *.9);
+  height: calc(var(--size-1) *.9);
+  border-radius: var(--border-rad) ;
+  background-color: var(--bg);
+
+  
+  margin: var(--standard-margins);
+  border-style: solid ;
+  padding: -5px;
+  
+}
+
+
+.small-button-container:hover {
+  width: var(--size-2);
+  height: calc(var(--size-1) * 1.22);
+  border-radius: var(--border-rad) ;
+  background-color: rgb(219, 153, 11);
+  margin: var(--standard-margins);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(1.2);
+
+ 
+}
+
+/* feature bar and other features... */
+
+.feature-bar-container {
+
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg);
+ margin: var(--standard-margins);
+
+}
+
+/* containers!! */
+.content-container-1 {
+  display: flex;
+}
+
+.button-container-1 {
+  position: absolute;
+  top: 60%;
+  right: 50%;
+  z-index: var(--ui-z);
+  margin: var(--size-2);
+}
+.button-container-2 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin: var(--size-2);
+  z-index: var(--ui-z);
+}
+
+.content-container-2 {
+  display: flex;
 }
